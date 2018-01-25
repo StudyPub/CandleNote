@@ -19,21 +19,21 @@ export default store;
 
   demoState = {
     user: {
+      _id: 5,
       username: 'Jon',
-      userId: 5,
       oathId: 'whatever',
     },
     notes: {
       byId: {
         3: {
-          id: 3,
+          _id: 3,
           userId: 5,
           subject: 'English',
           heading: 'Predicate Nominatives',
           body: 'Lorem Ipsum...',
         },
         5: {
-          id: 5,
+          _id: 5,
           userId: 5,
           subject: 'Comp Sci',
           heading: 'Higher order functions',
@@ -46,13 +46,13 @@ export default store;
     decks: {
       byId: {
         7: {
-          id: 7,
+          _id: 7,
           userId: 5,
           subject: 'Physics',
           title: 'Kinematics',
         },
         10: {
-          id: 10,
+          _id: 10,
           userId: 5,
           subject: 'Math',
           title: 'Derivatives',
@@ -64,25 +64,25 @@ export default store;
     flashcards: {
       byId: {
         11: {
-          id: 11,
+          _id: 11,
           deckId: 7,
           front: 'Sciency Question',
           back: 'Sciency Answer',
         },
         13: {
-          id: 13,
+          _id: 13,
           deckId: 7,
           front: 'Another Sciency Question',
           back: 'Another Sciency Answer',
         },
         17: {
-          id: 17,
+          _id: 17,
           deckId: 10,
           front: 'Math Question',
           back: 'Math Answer',
         },
         20: {
-          id: 20,
+          _id: 20,
           deckId: 10,
           front: 'Another Math Question',
           back: 'Another Math Answer',
@@ -94,7 +94,7 @@ export default store;
     videos: {
       byId: {
         10: {
-          id: 10,
+          _id: 10,
           userId: 5,
           title: 'Video Title',
           url: 'https://www.youtube.com/somethingfromyoutube,
@@ -107,10 +107,10 @@ export default store;
     messages: {
       byId: {
         8: {
-          id: 8,
+          _id: 8,
           userId: 5,
-          sendFrom: 'Some Name',
-          timeSent: 2131244325,
+          senTFrom: 10,  <-- id of user who sent message
+          timeSent: 2131244325, <-- probably wont need this for now
           messageBody: 'Lorem Ipsum...',
           hasBeenRead: false,
         }
