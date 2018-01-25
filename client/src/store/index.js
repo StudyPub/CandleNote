@@ -27,12 +27,14 @@ export default store;
       byId: {
         3: {
           id: 3,
+          userId: 5,
           subject: 'English',
           heading: 'Predicate Nominatives',
           body: 'Lorem Ipsum...',
         },
         5: {
           id: 5,
+          userId: 5,
           subject: 'Comp Sci',
           heading: 'Higher order functions',
           body: 'Lorem Ipsum...',
@@ -45,11 +47,13 @@ export default store;
       byId: {
         7: {
           id: 7,
+          userId: 5,
           subject: 'Physics',
           title: 'Kinematics',
         },
         10: {
           id: 10,
+          userId: 5,
           subject: 'Math',
           title: 'Derivatives',
         },
@@ -91,6 +95,7 @@ export default store;
       byId: {
         10: {
           id: 10,
+          userId: 5,
           title: 'Video Title',
           url: 'https://www.youtube.com/somethingfromyoutube,
           starred: true,
