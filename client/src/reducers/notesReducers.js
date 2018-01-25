@@ -13,23 +13,23 @@ const notesReducer = (state = defaultState, action) => {
         ...state,
         byId: {
           ...state.byId,
-          [action.payload.id]: action.payload,
+          [action.payload._id]: action.payload,
         },
       };
     case 'SET_NOTES': {
       const notesById = action.payload.reduce((notes, note) => ({
         ...notes,
-        [note.id]: note,
+        [note._id]: note,
       }), {});
       return { byId: notesById };
     }
     case 'SET_CURRENT_NOTE':
       return {
         ...state,
-        currentNote: action.payload.id,
+        currentNote: action.payload._id,
       };
     case 'DELETE_NOTE':
-      return dotProp.delete(state, `byId.${action.payload.id}`);
+      return dotProp.delete(state, `byId.${action.payload._id}`);
     default:
       return state;
   }

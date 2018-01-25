@@ -22,7 +22,7 @@ export const getVideos = userId => (
 
 export const setCurrentVideo = videoId => ({
   type: 'SET_CURRENT_VIDEO',
-  payload: { id: videoId },
+  payload: { _id: videoId },
 });
 
 export const deleteVideo = videoId => (
@@ -32,7 +32,7 @@ export const deleteVideo = videoId => (
         console.log('Delete video res:', res.body);
         dispatch({
           type: 'DELETE_VIDEO',
-          payload: { id: videoId },
+          payload: { _id: videoId },
         });
       })
   )

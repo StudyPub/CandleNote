@@ -22,7 +22,7 @@ export const getFlashcards = deckId => (
 
 export const setCurrentFlashcard = cardId => ({
   type: 'SET_CURRENT_FLASHCARD',
-  payload: { id: cardId },
+  payload: { _id: cardId },
 });
 
 export const deleteFlashcard = cardId => (
@@ -32,7 +32,7 @@ export const deleteFlashcard = cardId => (
         console.log('Delete Card response:', res.data);
         dispatch({
           type: 'DELETE_FLASHCARD',
-          payload: { id: cardId },
+          payload: { _id: cardId },
         });
       })
   )

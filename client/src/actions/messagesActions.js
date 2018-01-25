@@ -22,7 +22,7 @@ export const getMessages = userId => (
 
 export const setCurrentMessage = messageId => ({
   type: 'SET_CURRENT_MESSAGE',
-  payload: { id: messageId },
+  payload: { _id: messageId },
 });
 
 export const deleteMessage = messageId => (
@@ -32,7 +32,7 @@ export const deleteMessage = messageId => (
         console.log('Delete message res:', res.body);
         dispatch({
           type: 'DELETE_MESSAGE',
-          payload: { id: messageId },
+          payload: { _id: messageId },
         });
       })
   )

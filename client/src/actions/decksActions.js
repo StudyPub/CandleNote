@@ -22,7 +22,7 @@ export const getDecks = deckId => (
 
 export const setCurrentDeck = deckId => ({
   type: 'SET_CURRENT_DECK',
-  payload: { id: deckId },
+  payload: { _id: deckId },
 });
 
 export const deleteDeck = deckId => (
@@ -32,7 +32,7 @@ export const deleteDeck = deckId => (
         console.log('Delete deck response:', res.data);
         dispatch({
           type: 'DELETE_DECK',
-          payload: { id: deckId },
+          payload: { _id: deckId },
         });
       })
   )

@@ -13,23 +13,23 @@ const decksReducer = (state = defaultState, action) => {
         ...state,
         byId: {
           ...state.byId,
-          [action.payload.id]: action.payload,
+          [action.payload._id]: action.payload,
         },
       };
     case 'SET_DECKS': {
       const decksById = action.payload.reduce((decks, deck) => ({
         ...decks,
-        [deck.id]: deck,
+        [deck._id]: deck,
       }), {});
       return { byId: decksById };
     }
     case 'SET_CURRENT_DECK':
       return {
         ...state,
-        currentDeck: action.payload.id,
+        currentDeck: action.payload._id,
       };
     case 'DELETE_DECK':
-      return dotProp.delete(state, `byId.${action.payload.id}`);
+      return dotProp.delete(state, `byId.${action.payload._id}`);
     default:
       return state;
   }

@@ -22,7 +22,7 @@ export const getNotes = userId => (
 
 export const setCurrentNote = noteId => ({
   type: 'SET_CURRENT_NOTES',
-  payload: { id: noteId },
+  payload: { _id: noteId },
 });
 
 export const deleteNote = noteId => (
@@ -32,7 +32,7 @@ export const deleteNote = noteId => (
         console.log('Delete note res:', res.body);
         dispatch({
           type: 'DELETE_NOTE',
-          payload: { id: noteId },
+          payload: { _id: noteId },
         });
       })
   )

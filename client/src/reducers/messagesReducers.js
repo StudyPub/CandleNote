@@ -13,23 +13,23 @@ const messagesReducer = (state = defaultState, action) => {
         ...state,
         byId: {
           ...state.byId,
-          [action.payload.id]: action.payload,
+          [action.payload._id]: action.payload,
         },
       };
     case 'SET_MESSAGES': {
       const messagesById = action.payload.reduce((messages, message) => ({
         ...messages,
-        [message.id]: message,
+        [message._id]: message,
       }), {});
       return { byId: messagesById };
     }
     case 'SET_CURRENT_MESSAGE':
       return {
         ...state,
-        currentMessage: action.payload.id,
+        currentMessage: action.payload._id,
       };
     case 'DELETE_MESSAGE':
-      return dotProp.delete(state, `byId.${action.payload.id}`);
+      return dotProp.delete(state, `byId.${action.payload._id}`);
     default:
       return state;
   }

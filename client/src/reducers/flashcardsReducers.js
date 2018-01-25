@@ -13,23 +13,23 @@ const flashcardsReducer = (state = defaultState, action) => {
         ...state,
         byId: {
           ...state.byId,
-          [action.payload.id]: action.payload,
+          [action.payload._id]: action.payload,
         },
       };
     case 'SET_FLASHCARDS': {
       const cardsById = action.payload.reduce((cards, card) => ({
         ...cards,
-        [card.id]: card,
+        [card._id]: card,
       }), {});
       return { byId: cardsById };
     }
     case 'SET_CURRENT_FLASHCARD':
       return {
         ...state,
-        currentFlashcard: action.payload.id,
+        currentFlashcard: action.payload._id,
       };
     case 'DELETE_FLASHCARD':
-      return dotProp.delete(state, `byId.${action.payload.id}`);
+      return dotProp.delete(state, `byId.${action.payload._id}`);
     default:
       return state;
   }
