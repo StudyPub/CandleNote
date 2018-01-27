@@ -64,11 +64,7 @@ const flashcardsReducer = (state = defaultState, action) => {
     case 'SET_CURRENT_FLASHCARD':
       return {
         ...state,
-<<<<<<< HEAD
-        currentFlashcard: action.payload._id,
-=======
         currentFlashcard: { ...state.byId[action.payload.id] },
->>>>>>> master
       };
     case 'DELETE_FLASHCARD':
       return dotProp.delete(state, `byId.${action.payload._id}`);
