@@ -26,7 +26,11 @@ const messagesReducer = (state = defaultState, action) => {
     case 'SET_CURRENT_MESSAGE':
       return {
         ...state,
+<<<<<<< HEAD
         currentMessage: action.payload._id,
+=======
+        currentMessage: { ...state.byId[action.payload.id] },
+>>>>>>> master
       };
     case 'DELETE_MESSAGE':
       return dotProp.delete(state, `byId.${action.payload._id}`);
